@@ -343,10 +343,10 @@ namespace CarRentalSystem.Repository
 
             double paid_amount = 0;
 
-            // Check if there are rows before trying to read
+           
             if (reader.Read())
             {
-                // Check if the column exists before reading
+                
                 if (reader["total"] != DBNull.Value)
                 {
                     paid_amount = Convert.ToDouble(reader["total"]);
@@ -369,10 +369,9 @@ namespace CarRentalSystem.Repository
             cmd.Parameters.AddWithValue("@leaseID", leaseID);
             SqlDataReader reader1 = cmd.ExecuteReader();
 
-            DateTime sDate = DateTime.MinValue; // Initialize with a default value
+            DateTime sDate = DateTime.MinValue; 
             int vehicle_id = 0;
 
-            // Check if there are rows before trying to read
             if (reader1.Read())
             {
                 // Check if the columns exist before reading

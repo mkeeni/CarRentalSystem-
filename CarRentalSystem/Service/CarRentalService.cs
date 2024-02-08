@@ -145,7 +145,7 @@ namespace CarRentalSystem.Service
                 EngineCapacity = engineCapacity
             };
 
-            _carLeaseRepository.AddCar(newVehicle);
+            int a = _carLeaseRepository.AddCar(newVehicle);
             Console.WriteLine("Vehicle added successfully");
         }
 
@@ -236,9 +236,14 @@ namespace CarRentalSystem.Service
             Console.WriteLine("Enter Type (DailyLease/MonthlyLease): ");
             string types = Console.ReadLine();
 
+            TimeSpan dateDiff = endDate - startDate;
+            int days = dateDiff.Days;
+            Vehicle vehicle = new Vehicle();
+            vehicle = _carLeaseRepository.FindCarById(vehicle_id);
+            decimal total = vehicle.DailyRate * days;
+            int a = _carLeaseRepository.CreateLease(cust_id,vehicle_id,startDate,endDate,types) ;
+            Console.WriteLine($"Lease created successfully. Lease amount for {days} days is Rs.{total}");
 
-            _carLeaseRepository.CreateLease(cust_id,vehicle_id,startDate,endDate,types) ;
-            Console.WriteLine("Lease created successfully");
         }
 
         public void ReturnCarS()
@@ -248,6 +253,24 @@ namespace CarRentalSystem.Service
 
             _carLeaseRepository.ReturnCar(leaseID);
             
+        }
+
+        public void FindLeaseByIdS()
+        {
+            try
+            {
+                Lease lease = new Lease();
+                Console.WriteLine($"Enter Lease ID: ");
+                int leaseID = int.Parse(Console.ReadLine());
+
+                lease = _carLeaseRepository.FindLeaseById(leaseID);
+
+                Console.WriteLine($"Lease ID:{lease.LeaseID}\tVehicle ID: {lease.VehicleID}\tCustomer ID: {lease.CustomerID}\tStart Date:{lease.StartDate}\tEnd Date:{lease.EndDate}\tType:{lease.Type}");
+            }
+            catch(LeaseNotFoundException ex) 
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
         }
     }
 }

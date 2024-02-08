@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.Model
 {
-    internal class Lease
+    public class Lease
     {
         private int leaseID;
         private int vehicleID;
@@ -57,5 +57,7 @@ namespace CarRentalSystem.Model
             get { return type; }
             set { type = value; }
         }
+
+    
     }
 }

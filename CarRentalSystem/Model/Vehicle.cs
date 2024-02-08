@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.Model
 {
-    internal class Vehicle
+    public class Vehicle
     {
         private int vehicleID;
         private string make;

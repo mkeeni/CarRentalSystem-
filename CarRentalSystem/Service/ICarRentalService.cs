@@ -25,5 +25,6 @@ namespace CarRentalSystem.Service
         void CreateLeaseS();
         void ReturnCarS();
 
+        void FindLeaseByIdS();
     }
 }

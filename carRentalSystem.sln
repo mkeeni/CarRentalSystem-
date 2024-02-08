@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem", "CarRentalSystem\CarRentalSystem.csproj", "{7A12AFE2-E5F7-4D74-95BC-129121EA1357}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystemTest", "CarRentalSystemTest\CarRentalSystemTest.csproj", "{CD1ECB75-85A4-411A-9D74-A8EEEAA87491}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystemTest", "CarRentalSystemTest\CarRentalSystemTest.csproj", "{CD1ECB75-85A4-411A-9D74-A8EEEAA87491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

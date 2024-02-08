@@ -13,6 +13,7 @@ namespace CarRentalSystem
 
             int choice;
 
+
             do
             {
                 Console.WriteLine("1. Add Car");
@@ -29,6 +30,7 @@ namespace CarRentalSystem
                 Console.WriteLine("12. List Active Leases");
                 Console.WriteLine("13. List Lease History");
                 Console.WriteLine("14. Record Payment");
+                Console.WriteLine("15. Retrieve lease by ID");
                 Console.WriteLine("0. Exit");
 
                 Console.Write("Enter your choice: ");
@@ -91,6 +93,9 @@ namespace CarRentalSystem
                    case 14:
                        carRentalService.RecordPaymentS();
                        break;
+                    case 15:
+                        carRentalService.FindLeaseByIdS();
+                        break;
                     default:
                         Console.WriteLine("Invalid choice. Please enter a valid option.");
                         break;

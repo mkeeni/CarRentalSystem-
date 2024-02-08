@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.Model
 {
-    internal class Customer
+    public class Customer
     {
         private int customerID;
         private string firstName;
@@ -15,7 +15,7 @@ namespace CarRentalSystem.Model
         private string phoneNumber;
 
         public Customer() { }
-
+        
         public Customer(int customerID, string firstName, string lastName, string email, string phoneNumber)
         {
             CustomerID = customerID;

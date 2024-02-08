@@ -11,7 +11,7 @@ namespace CarRentalSystem.Repository
     internal interface ICarLeaseRepository
     {
 
-        void AddCar(Vehicle vehicle);
+        int AddCar(Vehicle vehicle);
         
         void RemoveCar(int vehicleID);
        
@@ -29,7 +29,7 @@ namespace CarRentalSystem.Repository
         Customer FindCustomerById(int customerID);
 
         
-        Lease CreateLease(int customerID, int vehicleID, DateTime startDate, DateTime endDate,string type);
+        int CreateLease(int customerID, int vehicleID, DateTime startDate, DateTime endDate,string type);
         
         void ReturnCar(int leaseID);
         
@@ -38,7 +38,10 @@ namespace CarRentalSystem.Repository
         List<Lease> ListLeaseHistory();
  
         void RecordPayment(Lease lease, double amount);
-       
+
+         Lease FindLeaseById(int leaseID);
+
+
     }
 
 }
